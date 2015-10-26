@@ -1,0 +1,28 @@
+wso2am:
+    image: tapantim/demo-wso2am:analytics
+    ports: 
+        - "9443:9443"
+        - "8243:8243"
+        - "8280:8280"
+    links:
+        - wso2bam:wso2bam
+        - mysql:statsdb
+        - service:service
+
+wso2bam:
+    image: tapantim/demo-wso2bam:analytics
+    links:
+        - mysql:statsdb
+
+mysql:
+    image: mysql:5.5
+    volumes_from: 
+        - datavolume
+
+datavolume:
+    build: ../analytics_db
+
+service:
+    image: tapantim/demo-service
+    ports:
+        - "8080:8080"
