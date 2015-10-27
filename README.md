@@ -13,10 +13,12 @@ dockerized so it is quite easy to setup. Demo consists of following components:
 # Quickstart
 
 1. Build docker image from Java service. This will build image named as tapantim/demo-service`.
+
         ```
         cd java/demo-service
         ./mvnw package docker:build
         ```
+        
 2. Start dockerized demo application.
         ```
         cd docker/demo
