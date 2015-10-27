@@ -14,17 +14,13 @@ dockerized so it is quite easy to setup. Demo consists of following components:
 
 1. Build docker image from Java service. This will build image named as tapantim/demo-service.
 
-        ```
         cd java/demo-service
         ./mvnw package docker:build
-        ```
         
 2. Start dockerized demo application.
 
-        ```
         cd docker/demo
         docker-compose up -d
-        ```
 
 3. Access API Manager
     * https://192.168.99.100:9443/publisher
@@ -92,7 +88,7 @@ Java client is used to generate API calls. Perform following steps in order to u
 4. Run demo-client 
 
         cd demo-clien
-        ./mvnw spring-boot:run
+        ./mvnw spring-boot:run  
         
 5. Open http://localhost:8080
 6. Login with API Store account such as admin/admin. Client uses OAuth to get access token.
