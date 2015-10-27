@@ -13,15 +13,15 @@ dockerized so it is quite easy to setup. Demo consists of following components:
 # Quickstart
 
 1. Build docker image from Java service. This will build image named as tapantim/demo-service`.
-```
-cd java/demo-service
-./mvnw package docker:build
-```
+        ```
+        cd java/demo-service
+        ./mvnw package docker:build
+        ```
 2. Start dockerized demo application.
-```
-cd docker/demo
-docker-compose up -d
-```
+        ```
+        cd docker/demo
+        docker-compose up -d
+        ```
 3. Access API Manager
     * https://192.168.99.100:9443/publisher
     * https://192.168.99.100:9443/store
