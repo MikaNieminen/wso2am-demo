@@ -29,7 +29,7 @@ docker-compose up -d
 
 Note that if you remove docker-compose application you will lose all statistics accumulated in mysql database.
 
-# Overview
+# Components
 
 ```
 +------+     api      +------+    service  +-------+
@@ -70,10 +70,34 @@ Java service is Spring Boot application which exposes following resources on doc
 
 curl command example for getting all customers and single customer (valid customer ids: 1, 2):
 ```
-curl -i -H "Accept: application/json" -X GET http://192.168.99.100:8080/customers
+curl -i -H "Accept: application/json"-X GET http://192.168.99.100:8080/customers
 
 curl -i -H "Accept: application/json" -X GET http://192.168.99.100:8080/customers/1
 ```
+
+## Java Client
+
+Java client is used to generate API calls. Perform following steps in order to use demo client:
+
+1. Create API with following specs:
+    * Context path: /api
+    * Version: v1
+    * At least on resource having: method = GET, path = /customers    
+2. Subscribe API and copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/application.properties
+3. Run demo-client 
+```
+cd demo-client
+./mvnw spring-boot:run
+```
+4. Open http://localhost:8080
+5. Login with API Store account such as admin/admin. Client uses OAuth to get access token.
+6. Specify call count and the client starts to call API sequentially.
+7. Go to GA to view real-time statistics
+
+## Google Analytics
+
+Demo setup is configured so that AM publishes statistics to Google Analytics. Contact Timo Tapanainen to get access
+into GA account.
 
 
 
