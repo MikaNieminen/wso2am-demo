@@ -82,7 +82,7 @@ Java client is used to generate API calls. Perform following steps in order to u
 1. Create API with following specs:
     * Context path: /api
     * Version: v1
-    * At least on resource having: method = GET, path = /customers    
+    * At least one resource having: method = GET, path = /customers    
 2. Subscribe API and copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/application.properties
 3. Run demo-client 
 ```
