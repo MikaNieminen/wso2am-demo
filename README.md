@@ -91,10 +91,9 @@ Java client is used to generate API calls. Perform following steps in order to u
 3. Copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/aplication.properties
 4. Run demo-client 
 
-        ```
         cd demo-clien
         ./mvnw spring-boot:run
-        ```
+        
 5. Open http://localhost:8080
 6. Login with API Store account such as admin/admin. Client uses OAuth to get access token.
 7. Specify call count and the client starts to call API sequentially.
