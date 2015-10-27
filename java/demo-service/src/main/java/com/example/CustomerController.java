@@ -1,8 +1,7 @@
 package com.example;
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.PostConstruct;
 import java.util.Collection;
@@ -36,6 +35,12 @@ public class CustomerController {
     public Customer getCustomer(@PathVariable String customerId) {
         System.out.println("GET customer by id: " + customerId);
         return customers.get(customerId);
+    }
+
+    @RequestMapping(value = "/customers", method = POST)
+    @ResponseStatus(value = HttpStatus.CREATED)
+    public void postCustomer(@RequestBody Customer customer) {
+        customers.put(customer.getId(), customer);
     }
 
 }

@@ -62,11 +62,22 @@ Note that if you remove docker-compose application you will lose all statistics 
 Java service is Spring Boot application which exposes following resources on docker host on port 8080:
 
 * Customer
-    * GET /customers
-    * GET /customers/{customerId}
+    * GET  /customers
+    * GET  /customers/{customerId}
+    * POST /customers 
 * Product
     * GET /products
     * GET /products/{productId}
+   
+Exaple customer resource:
+
+```
+{
+    id: "1",
+    firstname: "Timo",
+    lastname: "Tapanainen"
+}
+```
 
 curl command example for getting all customers and single customer (valid customer ids: 1, 2):
 ```
