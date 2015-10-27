@@ -12,7 +12,7 @@ dockerized so it is quite easy to setup. Demo consists of following components:
  
 # Quickstart
 
-1. Build docker image from Java service. This will build image named as tapantim/demo-service`.
+1. Build docker image from Java service. This will build image named as tapantim/demo-service.
 
         ```
         cd java/demo-service
@@ -20,10 +20,12 @@ dockerized so it is quite easy to setup. Demo consists of following components:
         ```
         
 2. Start dockerized demo application.
+
         ```
         cd docker/demo
         docker-compose up -d
         ```
+
 3. Access API Manager
     * https://192.168.99.100:9443/publisher
     * https://192.168.99.100:9443/store
@@ -86,10 +88,13 @@ Java client is used to generate API calls. Perform following steps in order to u
     * Version: v1
     * At least one resource having: method = GET, path = /customers    
 2. In API store create application, associate the application with above API and generate keys in subscription page.
-3. Copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/application.properties
+3. Copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/aplication.properties
 4. Run demo-client 
-        `cd demo-clien`
-        `./mvnw spring-boot:run`
+
+        ```
+        cd demo-clien
+        ./mvnw spring-boot:run
+        ```
 5. Open http://localhost:8080
 6. Login with API Store account such as admin/admin. Client uses OAuth to get access token.
 7. Specify call count and the client starts to call API sequentially.
