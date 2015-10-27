@@ -84,16 +84,16 @@ Java client is used to generate API calls. Perform following steps in order to u
     * Version: v1
     * At least one resource having: method = GET, path = /customers    
 2. In API store create application, associate the application with above API and generate keys in subscription page.
-2. Copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/application.properties
-3. Run demo-client 
-```
-cd demo-client
-./mvnw spring-boot:run
-```
-4. Open http://localhost:8080
-5. Login with API Store account such as admin/admin. Client uses OAuth to get access token.
-6. Specify call count and the client starts to call API sequentially.
-7. Go to GA to view real-time statistics
+3. Copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/application.properties
+4. Run demo-client 
+    ```
+    cd demo-client
+    ./mvnw spring-boot:run
+    ```
+5. Open http://localhost:8080
+6. Login with API Store account such as admin/admin. Client uses OAuth to get access token.
+7. Specify call count and the client starts to call API sequentially.
+8. Go to GA to view real-time statistics
 
 ## Google Analytics
 
