@@ -68,9 +68,11 @@ Java service is Spring Boot application which exposes following resources on doc
     * GET /products
     * GET /products/{productId}
 
-curl command example for getting customers:
+curl command example for getting all customers and single customer (valid customer ids: 1, 2):
 ```
 curl -i -H "Accept: application/json" -X GET http://192.168.99.100:8080/customers
+
+curl -i -H "Accept: application/json" -X GET http://192.168.99.100:8080/customers/1
 ```
 
 
