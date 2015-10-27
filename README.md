@@ -12,7 +12,7 @@ dockerized so it is quite easy to setup. Demo consists of following components:
  
 # Quickstart
 
-1. Build docker image from Java service. This will build image named as tapantim/demo-service.
+1. Build docker image from Java service. This will build an image named as tapantim/demo-service.
 
         cd java/demo-service
         ./mvnw package docker:build
@@ -59,7 +59,7 @@ Note that if you remove docker-compose application you will lose all statistics 
 
 ## Java Service
 
-Java service is Spring Boot application which exposes following resources on docker host port 8080:
+Java service is Spring Boot application which exposes following resources on docker host on port 8080:
 
 * Customer
     * GET /customers
