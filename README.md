@@ -79,11 +79,12 @@ curl -i -H "Accept: application/json" -X GET http://192.168.99.100:8080/customer
 
 Java client is used to generate API calls. Perform following steps in order to use demo client:
 
-1. Create API with following specs:
+1. Create API in API publisher with following specs:
     * Context path: /api
     * Version: v1
     * At least one resource having: method = GET, path = /customers    
-2. Subscribe API and copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/application.properties
+2. In API store create application, associate the application with above API and generate keys in subscription page.
+2. Copy consumer id and secret key from AM's subscription page and paste them into demo-client/src/resources/application.properties
 3. Run demo-client 
 ```
 cd demo-client
