@@ -16,8 +16,8 @@ List Customers
   Should Be Equal As Strings  ${resp.status_code}  200
 
   ${jsondata}=  To Json  ${resp.content}
-  Should Be Equal As Strings  ${jsondata[0]['firstname']}  Timo    
-  Should Be Equal As Strings  ${jsondata[1]['firstname']}  Antti    
+  Should Be Equal As Strings  ${jsondata[0]['firstname']}  Antti    
+  Should Be Equal As Strings  ${jsondata[1]['firstname']}  Timo    
     
 Add a Customer
   [Documentation]  Adds a new customer to the demo-service and queries the newly added customer
