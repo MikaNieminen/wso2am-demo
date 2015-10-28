@@ -1,0 +1,38 @@
+*** Settings ***
+Library  RequestsLibrary
+Library  Collections
+Library  String
+Suite Setup  Create Session  demosrv  ${SERVICE_URL} 
+Suite Teardown  Delete All Sessions
+
+*** Variables ***
+${SERVICE_URL}  http://localhost:8080
+
+*** Test Cases ***
+List Customers
+  [Documentation]  Enumerates customers from the demo-service API
+  [Tags]  Smoke
+  ${resp}=  Get Request  demosrv  customers
+  Should Be Equal As Strings  ${resp.status_code}  200
+
+  ${jsondata}=  To Json  ${resp.content}
+  Should Be Equal As Strings  ${jsondata[0]['firstname']}  Timo    
+  Should Be Equal As Strings  ${jsondata[1]['firstname']}  Antti    
+    
+Add a Customer
+  [Documentation]  Adds a new customer to the demo-service and queries the newly added customer
+  [Tags]  Regression
+  # Create data and headers
+  ${headers}=  Create Dictionary  Content-type=application/json  Accept=text/plain
+  ${data}=  Set Variable  {"id":"3", "firstname":"Ilpo", "lastname":"Paju"}
+  ${jsondata}=  To Json  ${data}
+  # POST the data
+  ${resp}=  Post Request  demosrv  customers  data=${data}  headers=${headers}
+  Should Be Equal As Strings  ${resp.status_code}  201
+  # GET the newly added data
+  ${resp}=  Get Request  demosrv  customers/3
+  Should Be Equal As Strings  ${jsondata['firstname']}  Ilpo    
+  
+*** Keywords ***
+
+
