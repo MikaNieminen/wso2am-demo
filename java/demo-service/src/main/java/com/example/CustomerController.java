@@ -22,7 +22,7 @@ public class CustomerController {
     @PostConstruct
     public void init() {
         customers.put("1", new Customer("1", "Timo", "Tapanainen"));
-        customers.put("2", new Customer("2", "Antti", "Kettunen"));
+        customers.put("2", new Customer("2", "Antti", "Kettunen Beatiful fox :P"));
     }
 
     @RequestMapping(value = "/customers", method = GET)
