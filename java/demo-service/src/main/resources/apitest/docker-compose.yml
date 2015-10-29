@@ -1,4 +1,4 @@
 springbootapi:
   image: dockerregistry.andonsandbox.pdcloud.int.tieto.com:5000/demo-service:latest
   ports:
-    - "8888:8080"
+    - "8890:8080"
