@@ -10,14 +10,13 @@ ${SERVICE_URL}  http://andonmaster.andonsandbox.pdcloud.int.tieto.com:8890
 
 *** Test Cases ***
 List Customers
-  [Documentation]  Enumerates customers from the demo-service API
+  [Documentation]  Enumerates Customer with ID nro 1 from the demo-service API
   [Tags]  Smoke
   ${resp}=  Get Request  demosrv  customers/1
   Should Be Equal As Strings  ${resp.status_code}  200
 
   ${jsondata}=  To Json  ${resp.content}
    Should Be Equal As Strings  ${jsondata['firstname']}  Timo    
-#  Should Be Equal As Strings  ${jsondata[1]['firstname']}  Antti    
     
 Add a Customer
   [Documentation]  Adds a new customer to the demo-service and queries the newly added customer
