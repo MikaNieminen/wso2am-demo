@@ -6,7 +6,7 @@ Suite Setup  Create Session  demosrv  ${SERVICE_URL}
 Suite Teardown  Delete All Sessions
 
 *** Variables ***
-${SERVICE_URL}  http://andonmaster.andonsandbox.pdcloud.int.tieto.com:8890
+${SERVICE_URL}  http://andonmaster.andonsandbox.pdcloud.int.tieto.com:8890 
 
 *** Test Cases ***
 List Customers
