@@ -10,7 +10,7 @@ ${SERVICE_URL}  http://andonmaster.andonsandbox.pdcloud.int.tieto.com:8890
 
 *** Test Cases ***
 List Customers
-  [Documentation]  Enumerates Customer with ID nro 1 from the demo-service API
+  [Documentation]  Enumerates Customer with ID nro 1 from the demo-service API 
   [Tags]  Smoke
   ${resp}=  Get Request  demosrv  customers/1
   Should Be Equal As Strings  ${resp.status_code}  200
