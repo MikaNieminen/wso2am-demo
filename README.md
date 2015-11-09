@@ -9,7 +9,15 @@ dockerized so it is quite easy to setup. Demo consists of following components:
 * Google Analytics for tracking statistics in addition to BAM
 * Java Service which is exposed to consumer as an API using AM
 * Java Client for invoking API
- 
+
+# Requirements
+You need to have the following software installed in your system:
+* JAVA
+* Docker
+* VirtualBox (Mac & Windows only, not needed for Linux)
+
+Before going through the quickstart below, make sure you've installed Docker as per the installation instructions at http://docs.docker.com/engine/installation/
+
 # Quickstart
 
 1. Build docker image from Java service. This will build an image named as tapantim/demo-service.
@@ -26,8 +34,8 @@ dockerized so it is quite easy to setup. Demo consists of following components:
     * https://192.168.99.100:9443/publisher
     * https://192.168.99.100:9443/store
 
-
-Note that if you remove docker-compose application you will lose all statistics accumulated in mysql database.
+    Use admin user credentials to login: admin/admin
+    Note that if you remove docker-compose application you will lose all statistics accumulated in mysql database.
 
 # Components
 
